@@ -1,0 +1,15 @@
+	
+	<html>
+		<head> 
+			<title> My first HTML in JAVA </title>
+		</head>
+		
+		<body> 
+			My first HTML page using Spring boot
+		</body>
+	</html>
+	
+	
+	# /WEB-INF/jsp/sayHello.jsp if a jsp file location in Spring MVC
+	
+		
