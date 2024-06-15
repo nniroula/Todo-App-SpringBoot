@@ -9,11 +9,15 @@
 			<h3>Welcome to Java Full Stack Development...</h3>
 		</div>
 		
-		<div>
+	<%-- 	<div>
 			User name: ${uname}
 		</div>
 		<div>
 			Password: ${pass}
+		</div> --%>
+		
+		<div>
+		<a href="list-todos">Manage your ToDo</a>
 		</div>
 		
 	</body>
