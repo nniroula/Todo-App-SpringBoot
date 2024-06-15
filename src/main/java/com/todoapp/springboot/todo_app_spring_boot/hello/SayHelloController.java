@@ -20,7 +20,7 @@ public class SayHelloController {
 	public String sayHelloHtml() { 
 		// return html page
 		StringBuffer sb = new StringBuffer();
-		
+		sb.append("<!DOCTYPE html>");
 		sb.append("<html>");
 		sb.append("<head>");
 		sb.append("<title>");
