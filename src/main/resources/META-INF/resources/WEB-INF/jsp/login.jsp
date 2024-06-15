@@ -8,6 +8,9 @@
 		<%-- <h3>Welcome to login page, ${name}!</h3> --%>
 		<h3>Welcome to login page!</h3>
 		
+		<!-- Error Message for Unsuccessful login  -->
+		<pre>${error}</pre>
+		
 		<form method="post">
 			<label for="usernameLabel"> <b>User name:</b> </label>
 			<input id="usernameLabel" type="text" name="uname" placeholder="enter username">

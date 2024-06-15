@@ -14,6 +14,14 @@ public class LoginController {
 	// use logger instead of system.out.println statements
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
+	//Authentication Service -> // need to instantiate this class -> new AuthenticationService() - but use Spring Construction injection for dependency
+	private AuthenticationService authenticationService; 
+	
+	public LoginController(AuthenticationService authenticationService) {
+		super();
+		this.authenticationService = authenticationService;
+	}
+
 	// need url
 	@RequestMapping("/login-jsp")
 	@ResponseBody
@@ -53,9 +61,21 @@ public class LoginController {
 	//capture form data from login page and render it on welcome page
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String gotoWelcomePage(@RequestParam String uname, @RequestParam String pass, ModelMap model) {
+		/*
 		model.put("uname", uname);
 		model.put("pass", pass);
 		return "welcome"; // login is a login.jsp file
+		*/
+		
+		//now, apply authentication service
+		if(authenticationService.authenticate(uname, pass)) {
+			model.put("uname", uname);
+			model.put("pass", pass);
+			return "welcome"; // login is a login.jsp file
+		}else {
+			model.put("error", "Invalid Username or Password. Try again!");
+		}
+		return "login";
 	}
 	
 	// Query String in jsp
@@ -78,5 +98,7 @@ public class LoginController {
 		model.put("name", name);
 		return "login"; // login is a login.jsp file
 	}
+	
+
 
 }

@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<div>
-			<h3>Welcome to Java Full Stack...</h3>
+			<h3>Welcome to Java Full Stack Development...</h3>
 		</div>
 		
 		<div>
