@@ -4,9 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class LoginController {
@@ -20,10 +21,27 @@ public class LoginController {
 		return "yet to log in";
 	}
 
+	/*
 	// now return jsp file
 	@RequestMapping("/login")
 	public String gotoLoginPage() {
 		return "login"; // login is a login.jsp file
+	}
+	*/
+	
+	// now use html form for user name and password
+	// now return jsp file
+	//@RequestMapping("/login")
+	// tell that it handles only GET, not POST
+	@RequestMapping(value="/login", method=RequestMethod.GET)
+	public String gotoLoginPage() {
+		return "login"; // login is a login.jsp file
+	}
+	
+	// for post request
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	public String gotoWelcomePage() {
+		return "welcome"; // login is a login.jsp file
 	}
 	
 	// Query String in jsp
@@ -34,7 +52,7 @@ public class LoginController {
 		System.out.println("******************* Request Param is " + name);
 		
 		// now use logger instead of sys out statements
-		logger.debug("Request param is {}", name);
+		logger.debug("Request param from logger is {}", name);
 		return "login"; // login is a login.jsp file
 	}
 	

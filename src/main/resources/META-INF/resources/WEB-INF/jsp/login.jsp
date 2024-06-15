@@ -5,11 +5,18 @@
 		<title>Login jsp page</title>
 	</head>
 	<body>
-		<h3>Welcome to login page, ${name}!</h3>
-		<label for="usernameLabel">
-			<b>User name:</b>
-		</label>
-		<input id="usernameLabel" type="text" placeholder="enter username">
+		<%-- <h3>Welcome to login page, ${name}!</h3> --%>
+		<h3>Welcome to login page!</h3>
+		
+		<form method="post">
+			<label for="usernameLabel"> <b>User name:</b> </label>
+			<input id="usernameLabel" type="text" name="uname" placeholder="enter username">
+			<br>
+			<label for="passwordLabel"> <b>Password:</b> </label>
+			<input id="passwordLabel" type="password" name="pass" placeholder="enter password">
+			
+			<input type="submit">
+		</form>
 		
 	</body>
 </html>
