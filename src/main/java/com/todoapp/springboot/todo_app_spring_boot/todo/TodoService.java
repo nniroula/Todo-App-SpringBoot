@@ -13,15 +13,24 @@ public class TodoService {
 	//private static List<Todo> todos;
 	private static List<Todo> todos = new ArrayList<>(); // list to hold tods
 	
+	// variable to count todos
+	private static int todosCount = 0;
+	
 	// to initialize a static variable, user static block
 	static {
-		todos.add(new Todo(1, "nabin", "Learn Java Full Stack", LocalDate.now().plusYears(1), false));
-		todos.add(new Todo(2, "in28minutes", "Learn Accountancy", LocalDate.now().plusYears(3), false));
+		todos.add(new Todo(++todosCount, "nabin", "Learn Java Full Stack", LocalDate.now().plusYears(1), false));
+		todos.add(new Todo(++todosCount, "in28minutes", "Learn Accountancy", LocalDate.now().plusYears(3), false));
 	}
 	
 	// given a user with username, return his todos
 	public List<Todo> findByUsername(String username){
 		// for now, return all todos
 		return todos;
+	}
+	
+	// add todo
+	public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
+		Todo todo = new Todo(++todosCount, username, description, targetDate, done);
+		todos.add(todo); // now go to addNewTodo method in TodoController and add ModelMap
 	}
 }
