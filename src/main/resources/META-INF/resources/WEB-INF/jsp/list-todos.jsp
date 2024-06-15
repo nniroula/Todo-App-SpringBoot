@@ -38,6 +38,7 @@
 					</c:forEach>
 				</tbody>
 			</table>
+			<a href="add-todo" class="btn btn-success">Add todo</a>
 			
 			<!--  js links copied from Maven Dependency folder
 			links are: 	/META-INF/resources/webjars/bootstrap/5.1.3/js/bootstrap.min.js
