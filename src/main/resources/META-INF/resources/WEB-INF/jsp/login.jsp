@@ -5,7 +5,6 @@
 		<title>Login jsp page</title>
 	</head>
 	<body>
-		<%-- <h3>Welcome to login page, ${name}!</h3> --%>
 		<h3>Welcome to login page!</h3>
 		
 		<!-- Error Message for Unsuccessful login  -->
