@@ -3,18 +3,20 @@
 
 <html>
 	<head>
+		<!-- css link copied from Maven dependency folder -->
+		<!-- css link location is /META-INF/resources/webjars/bootstrap/5.1.3/css/bootstrap.min.css -->
+		<link href="webjars/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+		
 		<title>welcome to todos list page</title>
 	</head>
 	<body>
 		<div>Welcome ${uname}! 
 			<hr>
-			<p>You are using @SessionAttributes("value for html name attribute")</p>
+			<!--  <p>You are using @SessionAttributes("value for html name attribute")</p> -->
 		</div>
 		
 		<!-- todos variable should come from controller class using ModelMap -->
-		<div>
-			Your TODOs are: ${todosData}
-		</div>
+		<!--  <div> Your TODOs are: ${todosData} </div> -->
 		
 		<table>
 			<thead> 
@@ -27,7 +29,6 @@
 			</thead>
 			<tbody>
 				<c:forEach items="${todosData}" var="todo">
-				 <tr>${todo.username} </tr>
 					<tr> 
 						<td> ${todo.id} </td>
 						<td> ${todo.description} </td>
@@ -37,6 +38,14 @@
 				</c:forEach>
 			</tbody>
 		</table>
+		
+		<!--  js links copied from Maven Dependency folder
+		links are: 	/META-INF/resources/webjars/bootstrap/5.1.3/js/bootstrap.min.js
+					/META-INF/resources/webjars/jquery/3.6.0/jquery.min.js
+		-->
+		<script src="webjars/bootstrap/5.1.3/js/bootstrap.min.js"> </script>
+		<script src="webjars/jquery/3.6.0/jquery.min.js"> </script>
+		 
 		
 	</body>
 </html>
