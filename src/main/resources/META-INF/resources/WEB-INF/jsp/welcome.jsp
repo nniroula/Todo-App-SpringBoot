@@ -9,5 +9,12 @@
 			<h3>Welcome to Java Full Stack...</h3>
 		</div>
 		
+		<div>
+			User name: ${uname}
+		</div>
+		<div>
+			Password: ${pass}
+		</div>
+		
 	</body>
 </html>

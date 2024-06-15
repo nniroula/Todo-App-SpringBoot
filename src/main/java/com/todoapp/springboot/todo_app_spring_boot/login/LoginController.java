@@ -33,14 +33,28 @@ public class LoginController {
 	// now return jsp file
 	//@RequestMapping("/login")
 	// tell that it handles only GET, not POST
+	
+	//1.
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String gotoLoginPage() {
 		return "login"; // login is a login.jsp file
 	}
 	
+	//2.
 	// for post request
+	/*
 	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String gotoWelcomePage() {
+		return "welcome"; // login is a login.jsp file
+	}
+	*/
+	
+	//3.
+	//capture form data from login page and render it on welcome page
+	@RequestMapping(value="/login", method=RequestMethod.POST)
+	public String gotoWelcomePage(@RequestParam String uname, @RequestParam String pass, ModelMap model) {
+		model.put("uname", uname);
+		model.put("pass", pass);
 		return "welcome"; // login is a login.jsp file
 	}
 	
