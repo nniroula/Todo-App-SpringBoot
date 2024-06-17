@@ -25,6 +25,8 @@
 						<th> Description </th>
 						<th> Target Date </th>
 						<th> Is it Done </th>
+						<!-- empty th corresponds to delete and update buttons -->
+						<th></th>
 						<th></th>
 					</tr>
 				</thead>
@@ -38,6 +40,9 @@
 							<!--  delete button and todo item link to delete it-->
 							<%-- <td> <a href="delete-todo?id=${todo.id}" class="btn btn-warning">DELETE ${todo.id} </a> </td> --%>
 							<td> <a href="delete-todo?id=${todo.id}" class="btn btn-warning">DELETE </a> </td>
+							
+							<!--  update todo button-->
+							<td> <a href="update-todo?id=${todo.id}" class="btn btn-success">UPDATE </a> </td>
 						</tr>
 					</c:forEach>
 				</tbody>
