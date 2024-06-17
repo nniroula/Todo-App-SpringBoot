@@ -6,14 +6,6 @@ import jakarta.validation.constraints.Size;
 
 
 public class Todo {
-	private int id;
-	private String username;
-	
-	@Size(min=10, message="Enter at least 10 characters") // then add @Valid to todo bean in Controller class
-	private String description;
-	private LocalDate targetDate;
-	private boolean done;
-	
 	//generate constructor -> right click on source in eclipse - generate constructor with fields
 	public Todo(int id, String username, String description, LocalDate targetDate, boolean done) {
 		super();
@@ -23,6 +15,15 @@ public class Todo {
 		this.targetDate = targetDate;
 		this.done = done;
 	}
+	
+	private int id;
+	private String username;
+	
+	@Size(min=10, message="Enter at least 10 characters") // then add @Valid to todo bean in Controller class
+	private String description;
+	private LocalDate targetDate;
+	private boolean done;
+	
 
 	// generate getters and setters
 	public int getId() {

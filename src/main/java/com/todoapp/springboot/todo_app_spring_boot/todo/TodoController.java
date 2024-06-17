@@ -78,7 +78,7 @@ public class TodoController {
 	@RequestMapping("delete-todo") //delete-todo?id from list-todos.jsp
 	public String deleteTodo(@RequestParam int id) { // request param to grab id frim the query string
 		//delete todo and redirect back to list of todos
-		
+		todoService.deleteById(id);
 		//redirect to list-todos jsp page
 		return "redirect:list-todos";
 		

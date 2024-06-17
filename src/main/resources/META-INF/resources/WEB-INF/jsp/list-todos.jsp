@@ -36,7 +36,8 @@
 							<td> ${todo.targetDate}</td>
 							<td> ${todo.done}</td>
 							<!--  delete button and todo item link to delete it-->
-							<td> <a href="delete-todo?id=${todo.id}" class="btn btn-warning">DELETE ${todo.id} </a> </td>
+							<%-- <td> <a href="delete-todo?id=${todo.id}" class="btn btn-warning">DELETE ${todo.id} </a> </td> --%>
+							<td> <a href="delete-todo?id=${todo.id}" class="btn btn-warning">DELETE </a> </td>
 						</tr>
 					</c:forEach>
 				</tbody>
